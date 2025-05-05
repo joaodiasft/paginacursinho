@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redação Nota Mil - Curso de Redação para o ENEM</title>
+    <style>
+        /* Reset e Estilos Globais */
+        :root {
+            --rosa: #ff2d6b;
+            --rosa-claro: #ff7aa8;
+            --preto: #121212;
+            --cinza: #2d2d2d;
+            --cinza-claro: #f5f5f5;
+            --branco: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: var(--preto);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--rosa);
+            color: var(--branco);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--rosa-claro);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--rosa);
+            color: var(--rosa);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--rosa);
+            color: var(--branco);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--rosa);
+            margin: 15px auto 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--rosa);
+        }
+        
+        .logo span {
+            color: var(--preto);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--rosa);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--preto);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(255,45,107,0.1) 0%, rgba(255,255,255,1) 100%);
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--preto);
+        }
+        
+        .hero-title span {
+            color: var(--rosa);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--cinza);
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Sobre o Curso */
+        .about {
+            background-color: var(--cinza-claro);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Valores */
+        .values {
+            background-color: var(--branco);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--rosa);
+            margin-bottom: 20px;
+        }
+        
+        /* Diferenciais */
+        .features {
+            background-color: var(--cinza-claro);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--rosa);
+            margin-bottom: 20px;
+        }
+        
+        /* Professores */
+        .teachers {
+            background-color: var(--branco);
+        }
+        
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .teacher-card {
+            background-color: var(--cinza-claro);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .teacher-image {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .teacher-info {
+            padding: 20px;
+        }
+        
+        .teacher-name {
+            color: var(--rosa);
+            margin-bottom: 10px;
+        }
+        
+        .teacher-title {
+            font-size: 0.9rem;
+            color: var(--cinza);
+            margin-bottom: 15px;
+        }
+        
+        /* Notas dos Alunos */
+        .grades {
+            background-color: var(--cinza-claro);
+        }
+        
+        .grades-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            background-color: var(--branco);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--rosa);
+            color: var(--branco);
+            border-color: var(--rosa);
+        }
+        
+        .grades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .grade-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .grade-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .grade-meta {
+            font-size: 0.9rem;
+            color: var(--cinza);
+            margin-bottom: 10px;
+        }
+        
+        .grade-score {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .grade-before, .grade-after {
+            font-weight: 700;
+        }
+        
+        .grade-before {
+            color: var(--cinza);
+        }
+        
+        .grade-after {
+            color: var(--rosa);
+            font-size: 1.2rem;
+        }
+        
+        .grade-arrow {
+            color: var(--rosa);
+            font-size: 1.5rem;
+        }
+        
+        /* Carrossel de Notas */
+        .grades-carousel {
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+        
+        .top-grade-card {
+            background-color: var(--rosa);
+            color: var(--branco);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 45, 107, 0.3);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .top-grade {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .top-grade-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .top-grade-meta {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        
+        .carousel-btn {
+            background-color: var(--branco);
+            color: var(--rosa);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            pointer-events: all;
+            border: none;
+            font-size: 1.2rem;
+        }
+        
+        /* Planos */
+        .pricing {
+            background-color: var(--branco);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .pricing-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--rosa);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background-color: var(--rosa);
+            color: var(--branco);
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--preto);
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--rosa);
+            margin-bottom: 20px;
+        }
+        
+        .pricing-price span {
+            font-size: 1rem;
+            color: var(--cinza);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .pricing-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--rosa);
+            font-weight: bold;
+        }
+        
+        /* Patrocinadores */
+        .sponsors {
+            background-color: var(--cinza-claro);
+        }
+        
+        .sponsors-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .sponsor-logo {
+            max-width: 150px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .sponsor-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Instagram */
+        .instagram {
+            background-color: var(--branco);
+        }
+        
+        .instagram-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .instagram-post {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .instagram-post:hover {
+            transform: scale(1.05);
+        }
+        
+        .instagram-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        /* Contato */
+        .contact {
+            background-color: var(--cinza-claro);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--rosa);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--rosa);
+            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 45, 107, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .map-container {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cinza);
+        }
+        
+        /* Rodapé */
+        .footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--rosa);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-logo span {
+            color: var(--branco);
+        }
+        
+        .footer-about p {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--branco);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--rosa);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--rosa);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--branco);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
+                padding: 20px;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .carousel-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">Redação<span>NotaMil</span></a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#features">Diferenciais</a></li>
+                <li><a href="#teachers">Professores</a></li>
+                <li><a href="#grades">Resultados</a></li>
+                <li><a href="#pricing">Planos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Sua redação <span>nota 1000</span> começa aqui</h1>
+                <p class="hero-subtitle">O curso que já ajudou centenas de alunos a alcançarem a excelência na redação do ENEM e conquistarem sua vaga na universidade.</p>
+                <a href="https://wa.me/5511999999999?text=Quero%20me%20matricular%20no%20Redação%20Nota%20Mil" class="btn">Matricule-se agora</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x500/ff2d6b/ffffff?text=Redação+Nota+Mil" alt="Estudante feliz com nota 1000">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Curso -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">Transformando vidas através da escrita</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O <strong>Redação Nota Mil</strong> nasceu da paixão pelo ensino e da vontade de ajudar estudantes a alcançarem seu potencial máximo na redação do ENEM. Nosso método exclusivo já transformou a vida acadêmica de centenas de alunos.</p>
+                    <p>Com correções detalhadas, materiais atualizados e um time de especialistas, garantimos que você desenvolverá as habilidades necessárias para construir textos nota 1000, mesmo partindo do zero.</p>
+                    <p>Nossa missão vai além da preparação para o ENEM - queremos formar cidadãos críticos e capazes de expressar suas ideias com clareza e coerência.</p>
+                    <a href="#features" class="btn btn-outline">Conheça nossos diferenciais</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400/f5f5f5/2d2d2d?text=Método+Exclusivo" alt="Método Redação Nota Mil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="values section">
+        <div class="container">
+            <h2 class="section-title">Nossos Valores</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">✓</div>
+                    <h3>Compromisso</h3>
+                    <p>Nos dedicamos integralmente ao desenvolvimento de cada aluno, acompanhando seu progresso de perto.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">★</div>
+                    <h3>Excelência</h3>
+                    <p>Buscamos sempre o mais alto padrão de qualidade em nossos materiais, correções e atendimento.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">↑</div>
+                    <h3>Resultado</h3>
+                    <p>Focamos no que realmente importa: sua evolução e seu sucesso no ENEM e vestibulares.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">❤</div>
+                    <h3>Ética</h3>
+                    <p>Agimos com transparência e honestidade em todas as nossas relações e processos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="features section" id="features">
+        <div class="container">
+            <h2 class="section-title">O que nos torna diferentes</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Correção Personalizada</h3>
+                    <p>Correções detalhadas com apontamentos específicos para sua evolução, feitas por especialistas em ENEM.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Repertório Atualizado</h3>
+                    <p>Material exclusivo com citações, dados estatísticos e referências atualizadas para impressionar os corretores.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Simulados Mensais</h3>
+                    <p>Redações com temas inéditos no padrão ENEM, corrigidas dentro do mesmo critério do exame oficial.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕒</div>
+                    <h3>Plantões de Dúvidas</h3>
+                    <p>Atendimento individualizado para esclarecer todas suas dúvidas sobre redação e temas atuais.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Acompanhamento Contínuo</h3>
+                    <p>Feedback constante sobre seu desempenho e dicas personalizadas via nosso aplicativo exclusivo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Turmas Reduzidas</h3>
+                    <p>Atenção individual garantida com turmas limitadas a 15 alunos para um aprendizado mais eficiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professores -->
+    <section class="teachers section" id="teachers">
+        <div class="container">
+            <h2 class="section-title">Nosso Time de Especialistas</h2>
+            <div class="teachers-grid">
+                <div class="teacher-card">
+                    <img src="https://via.placeholder.com/400x300/f5f5f5/2d2d2d?text=Professora+Ana" class="teacher-image" alt="Professora Ana">
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Ana Silva</h3>
+                        <p class="teacher-title">Mestra em Linguística - USP</p>
+                        <p>Corretora oficial do ENEM há 8 anos, já corrigiu mais de 15 mil redações.</p>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <img src="https://via.placeholder.com/400x300/f5f5f5/2d2d2d?text=Professor+Carlos" class="teacher-image" alt="Professor Carlos">
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Carlos Mendes</h3>
+                        <p class="teacher-title">Doutor em Educação - UNICAMP</p>
+                        <p>Especialista em metodologias de ensino de produção textual para vestibulares.</p>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <img src="https://via.placeholder.com/400x300/f5f5f5/2d2d2d?text=Professora+Juliana" class="teacher-image" alt="Professora Juliana">
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Juliana Oliveira</h3>
+                        <p class="teacher-title">Especialista em ENEM - UFMG</p>
+                        <p>Autora de 3 livros sobre redação nota 1000 e ex-avaliadora de bancas de vestibulares.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notas dos Alunos -->
+    <section class="grades section" id="grades">
+        <div class="container">
+            <h2 class="section-title">Resultados que Transformam</h2>
+            <p class="text-center">Veja a evolução dos nossos alunos nas últimas edições do ENEM</p>
+            
+            <div class="grades-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="2023">ENEM 2023</button>
+                <button class="filter-btn" data-filter="2022">ENEM 2022</button>
+                <button class="filter-btn" data-filter="treineiro">Treineiros</button>
+            </div>
+            
+            <div class="grades-grid">
+                <div class="grade-card" data-year="2023" data-type="enem">
+                    <h4 class="grade-name">Mariana Oliveira</h4>
+                    <p class="grade-meta">ENEM 2023 - 1ª aplicação</p>
+                    <div class="grade-score">
+                        <span class="grade-before">720</span>
+                        <span class="grade-arrow">→</span>
+                        <span class="grade-after">960</span>
+                    </div>
+                </div>
+                <div class="grade-card" data-year="2023" data-type="enem">
+                    <h4 class="grade-name">Pedro Henrique</h4>
+                    <p class="grade-meta">ENEM 2023 - 2ª aplicação</p>
+                    <div class="grade-score">
+                        <span class="grade-before">600</span>
+                        <span class="grade-arrow">→</span>
+                        <span class="grade-after">920</span>
+                    </div>
+                </div>
+                <div class="grade-card" data-year="2022" data-type="enem">
+                    <h4 class="grade-name">Amanda Santos</h4>
+                    <p class="grade-meta">ENEM 2022</p>
+                    <div class="grade-score">
+                        <span class="grade-before">580</span>
+                        <span class="grade-arrow">→</span>
+                        <span class="grade-after">980</span>
+                    </div>
+                </div>
+                <div class="grade-card" data-year="2023" data-type="treineiro">
+                    <h4 class="grade-name">Lucas Martins</h4>
+                    <p class="grade-meta">ENEM Treineiro 2023</p>
+                    <div class="grade-score">
+                        <span class="grade-before">-</span>
+                        <span class="grade-arrow">→</span>
+                        <span class="grade-after">940</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carrossel de Maiores Notas -->
+            <div class="grades-carousel">
+                <h3 class="section-title">Nossos Destaques</h3>
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <div class="top-grade-card">
+                            <div class="top-grade">1000</div>
+                            <h4 class="top-grade-name">Carolina Ferreira</h4>
+                            <p class="top-grade-meta">ENEM 2023 - Aprovada em Medicina na USP</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="top-grade-card">
+                            <div class="top-grade">980</div>
+                            <h4 class="top-grade-name">Rafael Costa</h4>
+                            <p class="top-grade-meta">ENEM 2022 - Aprovado em Direito na UFMG</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="top-grade-card">
+                            <div class="top-grade">960</div>
+                            <h4 class="top-grade-name">Isabela Nunes</h4>
+                            <p class="top-grade-meta">ENEM 2023 - Aprovada em Engenharia na UNICAMP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev">❮</button>
+                    <button class="carousel-btn next">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos -->
+    <section class="pricing section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Escolha seu Plano</h2>
+            <p class="text-center">Modalidades pensadas para atender diferentes necessidades e orçamentos</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Somente Correção</h3>
+                    <div class="pricing-price">R$149<span>/mês</span></div>
+                    <ul class="pricing-features">
+                        <li>4 correções por mês</li>
+                        <li>Feedback detalhado</li>
+                        <li>Gráfico de evolução</li>
+                        <li>Acesso a materiais de apoio</li>
+                        <li>Suporte por e-mail</li>
+                    </ul>
+                    <a href="https://wa.me/5511999999999?text=Quero%20me%20matricular%20no%20plano%20Somente%20Correção" class="btn btn-outline">Quero este plano</a>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Popular</div>
+                    <h3 class="pricing-title">Online Completo</h3>
+                    <div class="pricing-price">R$249<span>/mês</span></div>
+                    <ul class="pricing-features">
+                        <li>8 correções por mês</li>
+                        <li>Aulas ao vivo semanais</li>
+                        <li>Plantões de dúvidas</li>
+                        <li>Simulados mensais</li>
+                        <li>Material exclusivo</li>
+                        <li>Suporte prioritário</li>
+                    </ul>
+                    <a href="https://wa.me/5511999999999?text=Quero%20me%20matricular%20no%20plano%20Online%20Completo" class="btn">Quero este plano</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Presencial Premium</h3>
+                    <div class="pricing-price">R$349<span>/mês</span></div>
+                    <ul class="pricing-features">
+                        <li>Todos benefícios do Online</li>
+                        <li>Aulas presenciais 2x por semana</li>
+                        <li>Turmas reduzidas (15 alunos)</li>
+                        <li>Atendimento individual</li>
+                        <li>Workshops mensais</li>
+                        <li>Simulados com correção em sala</li>
+                    </ul>
+                    <a href="https://wa.me/5511999999999?text=Quero%20me%20matricular%20no%20plano%20Presencial%20Premium" class="btn btn-outline">Quero este plano</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patrocinadores -->
+    <section class="sponsors section">
+        <div class="container">
+            <h2 class="section-title">Parceiros e Apoiadores</h2>
+            <div class="sponsors-grid">
+                <img src="https://via.placeholder.com/150x80/f5f5f5/2d2d2d?text=Parceiro1" alt="Parceiro 1" class="sponsor-logo">
+                <img src="https://via.placeholder.com/150x80/f5f5f5/2d2d2d?text=Parceiro2" alt="Parceiro 2" class="sponsor-logo">
+                <img src="https://via.placeholder.com/150x80/f5f5f5/2d2d2d?text=Parceiro3" alt="Parceiro 3" class="sponsor-logo">
+                <img src="https://via.placeholder.com/150x80/f5f5f5/2d2d2d?text=Parceiro4" alt="Parceiro 4" class="sponsor-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="instagram section">
+        <div class="container">
+            <h2 class="section-title">Nosso Dia a Dia</h2>
+            <p class="text-center">Acompanhe nossas atividades e depoimentos de alunos no Instagram</p>
+            
+            <div class="instagram-feed">
+                <div class="instagram-post">
+                    <img src="https://via.placeholder.com/300x300/f5f5f5/2d2d2d?text=Post+1" alt="Post Instagram 1">
+                </div>
+                <div class="instagram-post">
+                    <img src="https://via.placeholder.com/300x300/f5f5f5/2d2d2d?text=Post+2" alt="Post Instagram 2">
+                </div>
+                <div class="instagram-post">
+                    <img src="https://via.placeholder.com/300x300/f5f5f5/2d2d2d?text=Post+3" alt="Post Instagram 3">
+                </div>
+                <div class="instagram-post">
+                    <img src="https://via.placeholder.com/300x300/f5f5f5/2d2d2d?text=Post+4" alt="Post Instagram 4">
+                </div>
+            </div>
+            
+            <div class="instagram-cta">
+                <a href="https://instagram.com/redacaonotamil" class="btn btn-outline">Siga-nos no Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Sua mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contato@redacaonotamil.com.br</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🏢</div>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua das Redações, 1000 - Sala 5<br>São Paulo - SP</p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            [Mapa do Google Maps aqui]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Redação<span>NotaMil</span></a>
+                    <p>O curso de redação que transforma estudantes em autores nota 1000 no ENEM e principais vestibulares do país.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📱</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">▶️</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-title">Links Úteis</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Sobre o Curso</a></li>
+                        <li><a href="#features">Metodologia</a></li>
+                        <li><a href="#teachers">Nossa Equipe</a></li>
+                        <li><a href="#grades">Resultados</a></li>
+                        <li><a href="#pricing">Planos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Ajuda</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contato</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+5511999999999">(11) 99999-9999</a></li>
+                        <li><a href="mailto:contato@redacaonotamil.com.br">contato@redacaonotamil.com.br</a></li>
+                        <li><a href="#">Rua das Redações, 1000 - SP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Redação Nota Mil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                navLinks.classList.remove('active');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Grades Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const gradeCards = document.querySelectorAll('.grade-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                
+                gradeCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.year === filter || card.dataset.type === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Grades Carousel
+        const carouselContainer = document.querySelector('.carousel-container');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        
+        let currentIndex = 0;
+        const slideCount = slides.length;
+        
+        function updateCarousel() {
+            carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateCarousel();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            updateCarousel();
+        });
+        
+        // Auto-rotate carousel
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateCarousel();
+        }, 5000);
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to a server
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            contactForm.reset();
+        });
+
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.value-card, .feature-card, .teacher-card, .pricing-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.value-card, .feature-card, .teacher-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
